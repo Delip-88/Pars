@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Eye, Trash2, X, AlertTriangle, ChevronDown } from "lucide-react"
 import { toast } from "react-toastify"
-import { data } from "react-router-dom"
 import { useApi } from "../middleware/ApiContext"
 
 const ContactsPage = () => {
@@ -29,7 +28,7 @@ const ContactsPage = () => {
   const fetchContacts =async () => {
     try {
       setLoading(true)
-      const response = await fetch("http://localhost:4000/api/contacts",{method: "GET", headers: {
+      const response = await fetch(`${API_BASE_URL}/api/contacts`,{method: "GET", headers: {
         "Authorization": `Bearer ${localStorage.getItem("token")}`,
       }})
       const data = await response.json()
