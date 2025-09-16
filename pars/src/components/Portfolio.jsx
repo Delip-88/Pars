@@ -3,6 +3,7 @@ import { useState } from "react"
 
 import { motion } from "framer-motion"
 import { ExternalLink, Github, Calendar, User, Tag } from "lucide-react"
+import getOptimizedCloudinaryUrl from "../utils/OptimizedUrl"
 
 
 // Demo portfolio data - can be replaced with real data later
@@ -13,7 +14,7 @@ const portfolioProjects = [
     category: "Web Development",
     description:
       "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management, secure payment processing, and responsive design.",
-    image: "/ecommerce-project.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998448/ecommerce-project_rxiaw3.png",
     technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
     client: "TechStore Inc.",
     completedDate: "2024-01-15",
@@ -26,7 +27,7 @@ const portfolioProjects = [
     category: "Graphics Design",
     description:
       "Complete brand identity package including logo design, color palette, typography, and brand guidelines for a sustainable fashion startup.",
-    image: "/brand-identity-project.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998444/brand-identity-design_yock1l.png",
     technologies: ["Adobe Illustrator", "Photoshop", "Figma", "InDesign"],
     client: "EcoFashion Co.",
     completedDate: "2023-12-20",
@@ -38,7 +39,7 @@ const portfolioProjects = [
     title: "SEO Optimization Campaign",
     category: "SEO",
     description:
-      "Comprehensive SEO strategy that increased organic traffic by 300% and improved search rankings for 50+ keywords in the healthcare industry.",
+      "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998447/digital-marketing-strategies_oxcmai.png",
     image: "/seo-campaign-project.png",
     technologies: ["Google Analytics", "SEMrush", "Ahrefs", "Schema Markup"],
     client: "HealthCare Plus",
@@ -52,7 +53,7 @@ const portfolioProjects = [
     category: "Digital Marketing",
     description:
       "Multi-platform digital marketing campaign that generated 500K+ impressions and increased brand engagement by 250% across social media channels.",
-    image: "/social-media-project.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998452/social-media-project_fxtyqd.png",
     technologies: ["Facebook Ads", "Google Ads", "Instagram", "Analytics"],
     client: "FitLife Gym",
     completedDate: "2024-01-30",
@@ -65,7 +66,7 @@ const portfolioProjects = [
     category: "Web Development",
     description:
       "Full-stack restaurant management system with online ordering, table reservations, inventory tracking, and staff management features.",
-    image: "/restaurant-system-project.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998451/restaurant-system-project_pkjtw8.png",
     technologies: ["Next.js", "PostgreSQL", "Prisma", "Stripe", "Socket.io"],
     client: "Bella Vista Restaurant",
     completedDate: "2023-11-25",
@@ -78,7 +79,7 @@ const portfolioProjects = [
     category: "Graphics Design",
     description:
       "Complete UI/UX design for a fitness tracking mobile app, including user research, wireframes, prototypes, and final design system.",
-    image: "/mobile-app-design-project.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998449/mobile-app-design-project_rckzex.png",
     technologies: ["Figma", "Adobe XD", "Principle", "InVision"],
     client: "FitTracker App",
     completedDate: "2024-03-05",
@@ -171,7 +172,7 @@ export default function Portfolio() {
                 {/* Project Image */}
                 <div className="relative overflow-hidden">
                   <img
-                    src={project.image || "/placeholder.svg"}
+                    src={getOptimizedCloudinaryUrl(project.image) || "/placeholder.svg"}
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />

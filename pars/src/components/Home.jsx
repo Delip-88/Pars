@@ -18,6 +18,7 @@ import {
 } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts"
+import getOptimizedCloudinaryUrl from "../utils/OptimizedUrl"
 
 const statsData = [
   { name: "Projects", value: 150 },
@@ -102,21 +103,21 @@ const projects = [
     title: "E-commerce Platform",
     category: "Web Development",
     description: "Modern online store with advanced features",
-    image: "/modern-ecommerce-mockup.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998447/modern-ecommerce-mockup_lilpwy.png",
     tags: ["React", "Node.js", "MongoDB"],
   },
   {
     title: "Brand Identity Design",
     category: "Graphics Design",
     description: "Complete brand makeover for tech startup",
-    image: "/brand-identity-design-mockup.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998443/brand-identity-design-mockup_oba9sb.png",
     tags: ["Branding", "Logo", "UI/UX"],
   },
   {
     title: "SEO Campaign Success",
     category: "SEO",
     description: "300% increase in organic traffic",
-    image: "/seo-analytics-dashboard.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998452/seo-analytics-dashboard_en8fi4.png",
     tags: ["Analytics", "Keywords", "Content"],
   },
 ]
@@ -326,13 +327,13 @@ export default function Home() {
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={project.image || "/placeholder.svg"}
+                    src={getOptimizedCloudinaryUrl(project.image) || "/placeholder.svg"}
                     alt={project.title}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-rose-200 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-rose-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {project.category}
                     </span>
                   </div>

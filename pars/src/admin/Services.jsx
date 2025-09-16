@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Plus, Edit, Trash2, X, Upload, Save } from "lucide-react"
 import { toast } from "react-toastify"
+import getOptimizedCloudinaryUrl from "../utils/OptimizedUrl"
 
 const AdminServices = () => {
   const [services, setServices] = useState([])
@@ -272,7 +273,7 @@ const AdminServices = () => {
                 >
                   {service.image?.secure_url && (
                     <img
-                      src={service.image.secure_url || "/placeholder.svg"}
+                      src={getOptimizedCloudinaryUrl(service.image.secure_url) || "/placeholder.svg"}
                       alt={service.title}
                       className="w-full h-48 object-cover"
                     />

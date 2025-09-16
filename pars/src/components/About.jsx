@@ -1,34 +1,35 @@
 
 import { motion } from "framer-motion"
 import { Target, Eye, Award, Globe, Heart, Lightbulb } from "lucide-react"
+import getOptimizedCloudinaryUrl from "../utils/OptimizedUrl"
 
 const teamMembers = [
   {
     id: 1,
     name: "Alex Johnson",
     role: "CEO & Founder",
-    image: "/team-ceo.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998444/company-story-image_btjibk.png",
     bio: "10+ years in tech leadership, passionate about digital innovation",
   },
   {
     id: 2,
     name: "Sarah Chen",
     role: "Lead Developer",
-    image: "/team-developer.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998447/modern-tech-workspace-with-multiple-monitors-showi_updgwa.png",
     bio: "Full-stack expert specializing in modern web technologies",
   },
   {
     id: 3,
     name: "Mike Rodriguez",
     role: "Creative Director",
-    image: "/team-designer.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998458/team-ceo_o7xzun.png",
     bio: "Award-winning designer with expertise in brand identity",
   },
   {
     id: 4,
     name: "Emily Davis",
     role: "Marketing Strategist",
-    image: "/team-marketer.png",
+    image: "https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998463/team-marketer_yeimxb.png",
     bio: "Digital marketing specialist with proven ROI track record",
   },
 ]
@@ -89,58 +90,58 @@ export default function About() {
 
       {/* Company Story */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+        <p className="text-gray-600 mb-6 leading-relaxed">
+          Founded in 2019, PARS began as a small team of developers and designers with a big vision: to help
+          businesses thrive in the digital age. What started as a passion project has grown into a full-service
+          digital agency serving clients worldwide.
+        </p>
+        <p className="text-gray-600 mb-6 leading-relaxed">
+          Our name "PARS" represents our commitment to excellence - we believe every project should be executed
+          with precision, creativity, and strategic thinking. We've helped over 50 businesses transform their
+          digital presence and achieve measurable growth.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          {stats.map((stat, index) => (
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className="text-center p-4 bg-rose-50 rounded-lg"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Founded in 2019, PARS began as a small team of developers and designers with a big vision: to help
-                businesses thrive in the digital age. What started as a passion project has grown into a full-service
-                digital agency serving clients worldwide.
-              </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Our name "PARS" represents our commitment to excellence - we believe every project should be executed
-                with precision, creativity, and strategic thinking. We've helped over 50 businesses transform their
-                digital presence and achieve measurable growth.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-center p-4 bg-rose-50 rounded-lg"
-                  >
-                    <div className="text-2xl font-bold text-rose-600">{stat.number}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
+              <div className="text-2xl font-bold text-rose-600">{stat.number}</div>
+              <div className="text-sm text-gray-600">{stat.label}</div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <img
-                src="/company-story-image.png"
-                alt="PARS Team Working"
-                className="rounded-lg shadow-lg w-full h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-rose-600 bg-opacity-10 rounded-lg"></div>
-            </motion.div>
-          </div>
+          ))}
         </div>
-      </section>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative"
+      >
+        <img
+          src={getOptimizedCloudinaryUrl("https://res.cloudinary.com/dm8ea4r5e/image/upload/v1757998444/company-story-image_btjibk.png")}
+          alt="PARS Team Working"
+          className="rounded-lg shadow-lg w-full h-96 object-cover"
+        />
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
       {/* Mission & Vision */}
       <section className="py-16 bg-gray-50">
@@ -261,7 +262,7 @@ export default function About() {
                 viewport={{ once: true }}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <img src={member.image || "/placeholder.svg"} alt={member.name} className="w-full h-64 object-cover" />
+                <img src={getOptimizedCloudinaryUrl(member.image) || "/placeholder.svg"} alt={member.name} className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
                   <p className="text-rose-600 font-medium mb-3">{member.role}</p>

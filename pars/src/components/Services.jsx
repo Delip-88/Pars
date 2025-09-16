@@ -3,6 +3,7 @@ import { Check, Star } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { ClipLoader } from "react-spinners"
+import getOptimizedCloudinaryUrl from "../utils/OptimizedUrl"
 
 export default function Services() {
   const [services, setServices] = useState([])
@@ -98,7 +99,7 @@ export default function Services() {
 
                 <div className="relative h-48 flex-shrink-0">
                   <img
-                    src={service.image.secure_url || "/placeholder.svg"}
+                    src={getOptimizedCloudinaryUrl(service.image.secure_url) || "/placeholder.svg"}
                     alt={`${service.title} service illustration`}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     loading="lazy"

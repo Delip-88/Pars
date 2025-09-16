@@ -19,6 +19,8 @@ import AdminLayout from "./admin/AdminLayout";
 import ContactsPage from "./admin/Contact";
 import OTPVerificationPage from "./components/VerifyOtp";
 import UsersPage from "./admin/Users";
+import EmailVerificationPage from "./components/EmailVerify";
+import ResetPassword from "./components/ForgotPassword";
 
 function App() {
   return (
@@ -40,12 +42,16 @@ function App() {
           <Route index element={<Home />} />
           <Route path="signin" element={<LoginPage />} />
           <Route path="signup" element={<RegisterPage />} />
-          <Route path ="verify-otp" element={<OTPVerificationPage />} />
+          <Route path="verify-otp" element={<OTPVerificationPage />} />
           <Route path="services" element={<Services />} />
           <Route path="contact" element={<Contact />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="about" element={<About />} />
+
+          {/* Email Verification Routes */}
+          <Route path="/forgot-password" element={<EmailVerificationPage />} />
+          <Route path="/reset-password/:id" element={<ResetPassword />} />
         </Route>
         <Route path="/login" element={<AdminLogin />} />
         <Route
