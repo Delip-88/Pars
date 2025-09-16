@@ -4,18 +4,22 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { ClipLoader } from "react-spinners"
 import getOptimizedCloudinaryUrl from "../utils/OptimizedUrl"
+import { useApi } from "../middleware/ApiContext"
 
 export default function Services() {
   const [services, setServices] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const navigate = useNavigate();
+  const { API_BASE_URL } = useApi();
 
   const fetchServices = async () => {
     try {
       setLoading(true)
       setError(null)
-      const response = await fetch("http://localhost:4000/api/services")
+    
+    // Then use it for your fetch calls
+    const response = await fetch(`${API_BASE_URL}/api/services`);
       const data = await response.json()
       setServices(Array.isArray(data.services) ? data.services : [])
     } catch (error) {

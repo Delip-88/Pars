@@ -4,8 +4,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Plus, Edit, Trash2, X, Upload, Save } from "lucide-react"
 import { toast } from "react-toastify"
 import getOptimizedCloudinaryUrl from "../utils/OptimizedUrl"
+import { useApi } from "../middleware/ApiContext"
 
 const AdminServices = () => {
+  const { API_BASE_URL } = useApi();
   const [services, setServices] = useState([])
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
@@ -26,7 +28,7 @@ const AdminServices = () => {
   const fetchServices = async () => {
     try {
       setLoading(true)
-      const response = await fetch("http://localhost:4000/api/services")
+      const response = await fetch(`${API_BASE_URL}/api/services`)
       const data = await response.json()
       setServices(Array.isArray(data.services) ? data.services : [])
     } catch (error) {
@@ -148,8 +150,8 @@ const AdminServices = () => {
 
     try {
       const url = editingService
-        ? `http://localhost:4000/api/services/${editingService._id}`
-        : "http://localhost:4000/api/services"
+        ? `${API_BASE_URL}/api/services/${editingService._id}`
+        : `${API_BASE_URL}/api/services`
 
       const method = editingService ? "PATCH" : "POST"
 
@@ -203,7 +205,7 @@ const AdminServices = () => {
     const toastId = toast.loading("Deleting service...")
 
     try {
-      const response = await fetch(`http://localhost:4000/api/services/${serviceId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/services/${serviceId}`, {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("token")}`,

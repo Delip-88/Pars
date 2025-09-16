@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
+import { useApi } from "../middleware/ApiContext";
 
 export default function Contact() {
+  const { API_BASE_URL } = useApi();
   const location = useLocation();
   const { service } = location.state || {}; 
   const user = JSON.parse(localStorage.getItem("user"));
@@ -23,7 +25,7 @@ export default function Contact() {
   const fetchServices = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:4000/api/services");
+      const response = await fetch(`${API_BASE_URL}/api/services`);
       const data = await response.json();
 
       // Make sure we only take the title
@@ -55,7 +57,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4000/api/contacts", {
+      const response = await fetch(`${API_BASE_URL}/api/contacts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

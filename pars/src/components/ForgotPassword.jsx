@@ -3,7 +3,9 @@ import { useState } from "react"
 import { Eye, EyeOff, Check, X, Shield, Lock } from "lucide-react"
 import { useNavigate, useParams } from "react-router-dom"
 import { toast } from "react-toastify"
+import { useApi } from "../middleware/ApiContext"
 const ResetPassword = () => {
+  const { API_BASE_URL } = useApi();
   const navigate = useNavigate()
   const { id } = useParams()
   const [formData, setFormData] = useState({
@@ -69,7 +71,7 @@ const ResetPassword = () => {
       return
     }
 
-    const data = await fetch("http://localhost:4000/api/auth/reset-password", {
+    const data = await fetch(`${API_BASE_URL}/api/auth/reset-password`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

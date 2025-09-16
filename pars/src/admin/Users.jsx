@@ -3,10 +3,10 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Eye, Trash2, X, AlertTriangle, CheckCircle, XCircle } from "lucide-react"
 import { toast } from "react-toastify"
-import { data } from "react-router-dom"
+import { useApi } from "../middleware/ApiContext"
 
 const UsersPage = () => {
-  const API_BASE_URL = import.meta.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
+  const { API_BASE_URL } = useApi();
 
 
 

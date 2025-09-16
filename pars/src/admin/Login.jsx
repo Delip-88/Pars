@@ -2,9 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Eye, EyeOff, Lock, Mail, LogIn, PersonStanding } from "lucide-react";
 import { toast } from "react-toastify";
+import { useApi } from "../middleware/ApiContext";
 
 const AdminLogin = () => {
-  const API_BASE_URL = "http://localhost:4000";
+  const { API_BASE_URL } = useApi();
 
   const [formData, setFormData] = useState({
     email: "",

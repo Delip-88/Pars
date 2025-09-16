@@ -6,9 +6,10 @@ import { Eye, EyeOff, Lock, Mail, User, UserPlus } from "lucide-react"
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { useNavigate } from "react-router-dom"
+import { useApi } from "../middleware/ApiContext"
 
 const RegisterPage = () => {
-  const API_BASE_URL = "http://localhost:4000"
+  const { API_BASE_URL } = useApi();
 
   const [formData, setFormData] = useState({
     name: "",

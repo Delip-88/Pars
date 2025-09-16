@@ -8,8 +8,10 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useApi } from "../middleware/ApiContext";
 
 export default function EmailVerificationPage() {
+  const { API_BASE_URL } = useApi();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +44,7 @@ export default function EmailVerificationPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:4000/api/auth/forgot-password",
+        `${API_BASE_URL}/api/auth/forgot-password`,
         {
           body: JSON.stringify({ email: trimmedEmail }),
           headers: {
