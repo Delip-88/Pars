@@ -1,4 +1,12 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -14,7 +22,8 @@ export default function Footer() {
               <span className="text-xl font-bold">PARS</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Leading IT company specializing in web development, graphics design, SEO, and digital marketing solutions.
+              Leading IT company specializing in web development, graphics
+              design, SEO, and digital marketing solutions.
             </p>
             <div className="flex space-x-4">
               <Facebook className="w-5 h-5 text-gray-400 hover:text-rose-400 cursor-pointer transition-colors" />
@@ -29,27 +38,42 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   Web Development
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   Graphics Design
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   SEO Optimization
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   Digital Marketing
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   Brand Strategy
                 </a>
               </li>
@@ -61,27 +85,42 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   Portfolio
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   Blogs
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+                >
                   Privacy Policy
                 </a>
               </li>
@@ -102,7 +141,9 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-rose-400" />
-                <span className="text-gray-400 text-sm">123 Business St, City, State 12345</span>
+                <span className="text-gray-400 text-sm">
+                  123 Business St, City, State 12345
+                </span>
               </div>
             </div>
           </div>
@@ -110,17 +151,26 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 PARS. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">
+            © {new Date().getFullYear()} PARS. All rights reserved.
+          </p>
+
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+            >
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-rose-400 transition-colors text-sm">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-rose-400 transition-colors text-sm"
+            >
               Privacy Policy
             </a>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
