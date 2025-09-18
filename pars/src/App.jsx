@@ -40,6 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
           <Route path="signin" element={<LoginPage />} />
           <Route path="signup" element={<RegisterPage />} />
           <Route path="verify-otp" element={<OTPVerificationPage />} />

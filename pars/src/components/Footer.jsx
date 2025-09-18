@@ -133,16 +133,16 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-rose-400" />
-                <span className="text-gray-400 text-sm">info@pars.com</span>
+                <span className="text-gray-400 text-sm">official.pars07@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-rose-400" />
-                <span className="text-gray-400 text-sm">+1 (555) 123-4567</span>
+                <span className="text-gray-400 text-sm">+977 9763476358</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-rose-400" />
                 <span className="text-gray-400 text-sm">
-                  123 Business St, City, State 12345
+                Hetauda-2, Makwanpur, Nepal
                 </span>
               </div>
             </div>

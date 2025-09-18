@@ -47,6 +47,12 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <NavLink
+              to="home"
+              className="text-gray-700 hover:text-rose-600 font-medium transition-colors duration-200"
+            >
+              Home
+            </NavLink>
+            <NavLink
               to="about"
               className="text-gray-700 hover:text-rose-600 font-medium transition-colors duration-200"
             >
@@ -124,6 +130,12 @@ export default function Header() {
           }`}
         >
           <nav className="flex flex-col space-y-4 py-4">
+            <NavLink
+              to="home"
+              className="text-gray-700 hover:text-rose-600 font-medium transition-colors duration-200 py-2"
+            >
+              Home
+            </NavLink>
             <NavLink
               to="about"
               className="text-gray-700 hover:text-rose-600 font-medium transition-colors duration-200 py-2"

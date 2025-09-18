@@ -67,9 +67,7 @@ export default function NotFound() {
             <NavLink to="/services" className="text-rose-600 hover:text-rose-700 font-medium transition-colors">
               Our Services
             </NavLink>
-            <NavLink to="/blogs" className="text-rose-600 hover:text-rose-700 font-medium transition-colors">
-              Blog
-            </NavLink>
+            
             <NavLink to="/contact" className="text-rose-600 hover:text-rose-700 font-medium transition-colors">
               Contact Us
             </NavLink>
